@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Prediction</title>
+</head>
+<body>
+    <h1>Upload an image for prediction</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" />
+        <input type="submit" value="Predict" />
+    </form>
+
+    <!-- Display error message if present -->
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <!-- Display the result image if present -->
+    {% if result_image %}
+        <h2>Result:</h2>
+        <img src="{{ result_image }}" alt="Result Image" />
+    {% endif %}
+</body>
+</html>
