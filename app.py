@@ -67,3 +67,5 @@ def process_model_output(results, original_image):
     return original_image
 
 
+if __name__ == '__main__':
+    app.run(debug=True)
